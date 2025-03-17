@@ -1,3 +1,58 @@
 p {
-    color: blue;
+    color: lightskyblue;
+}
+body
+{
+    color: white;
+    background-color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    padding: 0;
+    text-align: left;
+}
+h1
+{
+    color: lavenderblush;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+h2
+{
+    color:honeydew; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+li
+{
+    color: aquamarine;
+    font-size: medium;
+}
+ul 
+{
+    list-style: none;
+    padding: 0;
+}
+li 
+{
+    display: inline;
+}
+a 
+{
+    text-decoration: none;
+    color: lightblue;
+    font-size: medium;
+}
+div 
+{
+    background-color: gray;
+    padding: 20px;
+    margin: 25px;
+    border-radius: 10px;
+}
+footer 
+{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: small;
 }
