@@ -2,6 +2,7 @@
     <head>
     <title> Kevin's portfolio</title>
         <!-- remember to route relative to index.php  -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="./assets/js/homepage.js"></script>
         <link rel="stylesheet" href="./assets/styles/homepage.css">
     </head>
@@ -23,6 +24,9 @@
         <div id="projects">
             <h2>My Works</h2>
             <p>You can check out my productions & credits by clicking Projects or my Spotify</p>
+            <button id="ajax-get">Fetch Projects</button>
+            <div id="projects-container"></div>
+
             
         </div>
         <div id="contact">
