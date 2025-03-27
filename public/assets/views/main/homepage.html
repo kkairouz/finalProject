@@ -14,6 +14,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        
         <div id="general">
             <h2>Welcome to My Portfolio</h2>
             <p>Music Producer | Programmer | Professional Deep House Vocalist</p>
@@ -25,8 +26,18 @@
         <div id="projects">
             <h2>My Works</h2>
             <p>You can check out my productions & credits by clicking Projects or my Spotify</p>
-            <button id="ajax-get">Fetch Projects</button>
+            <button id="ajax-get">Newest Track</button>
             <div id="projects-container"></div>
+            <div class="my-3">
+                <iframe style="border-radius:12px" 
+                        src="https://open.spotify.com/embed/artist/44NK7lcuXAEc35Z383UnCS?utm_source=generator" 
+                        width="100%" height="352" frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                </iframe>
+            </div>
+        
             <div class="grid text-center">
                 <div class="g-col-6 g-col-md-4">Deep House</div> <!-- from bootstrap-->
                 <div class="g-col-6 g-col-md-4">Pop</div>
@@ -45,6 +56,21 @@
                 <li><a href="https://open.spotify.com/artist/44NK7lcuXAEc35Z383UnCS?si=1kMZM4tlQBydpEn7zzbPTQ" target="_blank">Spotify</a></li>
                 
             </ul>
+            <h3><b>Contact Form</b></h3>
+            <form>
+                <fieldset>
+                    <label for="firstname">Enter your first name</label>
+                    <input type="text" id="firstname" name="firstname" required />
+        
+                    <label for="lastname">Enter your last name</label>
+                    <input type="text" id="lastname" name="lastname" required />
+        
+                    <label for="email">Enter your email address</label>
+                    <input type="email" id="email" name="email" required />
+        
+                    <input type="submit" value="Submit" id="submit" />
+                </fieldset>
+            </form>
         </div>
         <footer>
             <p> 2025 Kevin Kairouz. All rights reserved.</p>
