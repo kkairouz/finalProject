@@ -15,7 +15,7 @@ abstract class Controller {
         $User = new User();
         $query = !empty($_GET['name']) ? $_GET['name'] : null;
 
-        $nextUser = $this->getContactInfo($query);
+        $nextUser = $User->getContactInfo($query);
 
         echo json_encode($nextUser);
         exit();
@@ -202,5 +202,4 @@ public function validateData($inputData)
   
 }
 }
-
 

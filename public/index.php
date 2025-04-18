@@ -32,4 +32,3 @@ if ($uriArray[1] === 'contact' && $uriArray[2] === 'info' && $_SERVER['REQUEST_M
     }
 }
 
-
