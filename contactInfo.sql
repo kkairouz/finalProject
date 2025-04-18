@@ -11,4 +11,11 @@ CREATE TABLE `information`
 	primary key (`id`)
 
 ); 
+CREATE TABLE `audio`
+(
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`fileName` varchar(100) NOT NULL,
+	 primary key(`id`)
+
+);
 
