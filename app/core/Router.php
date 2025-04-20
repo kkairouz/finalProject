@@ -29,24 +29,23 @@ class Router {
     protected function handleUserRoutes() {
         if ($this->uriArray[1] === 'contacts' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             $userController = new UserController();
-            $userController->contactView();
+            $userController->contactsView();
         }
 
         if ($this->uriArray[1] === 'files' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             $userController = new UserController();
-            $userController->fileNameView();
+            $userController->filesView();
         }
 
         if ($this->uriArray[1] === 'contacts' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $userController = new UserController();
-            $userController->saveUser();
+            $userController->saveContact();
         }
 
         if ($this->uriArray[1] === 'api' && $this->uriArray[2] === 'files' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             $userController = new UserController();
-            $userController->getAllfileNames();
+            $userController->getAllFiles();
         }
-        
 
     }
 }
