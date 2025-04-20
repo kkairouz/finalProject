@@ -1,4 +1,4 @@
-z<?php
+<?php
 
 namespace app\core;
 
@@ -27,15 +27,26 @@ class Router {
     }
 
     protected function handleUserRoutes() {
-        if ($this->uriArray[1] === 'users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+        if ($this->uriArray[1] === 'contacts' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             $userController = new UserController();
-            $userController->usersView();
+            $userController->contactView();
         }
 
-        //give json/API requests a api prefix
-        if ($this->uriArray[1] === 'api' && $this->uriArray[2] === 'users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+        if ($this->uriArray[1] === 'files' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             $userController = new UserController();
-            $userController->getUsers();
+            $userController->fileNameView();
         }
+
+        if ($this->uriArray[1] === 'contacts' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $userController = new UserController();
+            $userController->saveUser();
+        }
+
+        if ($this->uriArray[1] === 'api' && $this->uriArray[2] === 'files' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+            $userController = new UserController();
+            $userController->getAllfileNames();
+        }
+        
+
     }
 }

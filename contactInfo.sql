@@ -1,6 +1,6 @@
-CREATE DATABASE `contact`;
+CREATE DATABASE `finalproject`;
 
-USE contact; 
+USE `finalproject`;
 
 CREATE TABLE `information`
 (
@@ -19,3 +19,14 @@ CREATE TABLE `audio`
 
 );
 
+insert into audio (fileName)
+values ('Better Together');
+
+insert into audio (fileName)
+values ('Goodbyes');
+
+insert into audio (fileName)
+values ('Not Like Us');
+
+insert into audio (fileName)
+values ('Birds of a Feather');

@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Audio Sent</title>
+    <title>Audio Sending</title>
     <link rel="stylesheet" href="./assets/styles/homepage.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
-    <h1>Audio Received!</h1>
-    <p>Thanks for sending your song. Kevin will listen to it shortly.</p>
-</body>
+
+    <div class ="header">
+
+        <a href="/" style="color:#89008b;" >Home</a>
+        <a href="/files" style="color:#0c008b;" >files</a>
+        <a href="/contacts" style="color:#008b84;" >Contact</a>
+
+    </div>
+
+        <div id="upload" class="my-3">
+        <h3>Upload Your Song here for me to listen</h3>
+        <p>MP3 or WAV format preferred</p>
+
+        <input class="form-control" type="file" id="audioUpload" accept="audio/mp3, audio/wav" />
+        <audio id="audioPlayer" controls style="margin-top: 15px; display: none;"></audio>
+
+    </div>
+</div>
 </html>

@@ -1,12 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form Submitted</title>
+    <title>Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="./assets/styles/homepage.css">
 </head>
+<style>
+
+    #error {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #success {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .error-text {
+        color: red;
+        font-weight: 500;
+    }
+
+    .success-text {
+        color: green;
+        font-weight: 500;
+    }
+
+</style>
 <body>
+    <div class ="header">
+
+        <a href="/" style="color:#89008b;" >Home</a>
+        <a href="/files" style="color:#0c008b;" >files</a>
+        <a href="/contacts" style="color:#008b84;" >Contact</a>
+
+    </div>
+
     <h1>Thank you for contacting Kevin!</h1>
     <p>Your message has been received. Ill get back to you soon.</p>
 
+    <h1><b>Contact Form</b></h1>
+    <form id="form-id">
+    <fieldset>
+        <label for="firstname">Enter your first name:</label>
+        <input type="text" id="firstname" firstname="firstname" />
+
+        <label for="lastname">Enter your last name:</label>
+        <input type="text" id="lastname" lastname="lastname"  />
+
+        <label for="email">Enter your email:</label>
+        <input type="text" id="email" email="email"  />
+
+        <input type="submit" value="Submit" id="submit"/>
+
+    </fieldset>   
+    <div id="success"></div>
+
+
+    <div id="error"></div> 
+  
+    <script>
+
+        $(document).ready(function () {
+    
+            $('#form-id').on('submit', function (e) {
+                e.preventDefault();
+    
+                $('#error').html('');
+                $('#success').html('');
+    
+                const firstName = $('#firstname').val();
+                const lastName = $('#lastname').val();
+                const email = $('#email').val();
+                
+    
+                const data = {
+                    firstName,
+                    lastName,
+                    email,
+                }
+                $.ajax({
+                    url: `http://localhost:8888/contacts`,
+                    type: "POST",
+                    data: data,
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+    
+                        $('#success').html('<div class="success-text">Your contact information has been sent successfully!</div>');
+    
+                    },
+                    error: function (data){
+                        console.log(data.responseJSON)
+    
+                        $('#error').html('')
+                        for (const property in data.responseJSON) {
+                            $('#error').append(` <div class='error-text'>${data.responseJSON[property]}</div>`)
+                        }
+                    }
+                });
+            })
+    
+        })
+    
+    
+    </script>
 </body>
-</html>
+</html> 
