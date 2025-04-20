@@ -6,7 +6,33 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
+<style>
+    .files-container {
+        display: block;
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border: 1px solid #cccccc;
+        border-radius: 8px;
+    }
+
+    .margin-thirty {
+        margin-top: 30px;
+    }
+
+    .margin-ten {
+        margin-top: 10px;
+    }
+
+    h1
+    {
+        font-size: xx-large;
+        text-align: center;
+        margin: 0 auto;
+    }
+</style>
 <body>
+    
 
     <div class ="header">
 
@@ -22,6 +48,10 @@
 
         <input class="form-control" type="file" id="audioUpload" accept="audio/mp3, audio/wav" />
         <audio id="audioPlayer" controls style="margin-top: 15px; display: none;"></audio>
+        <h1>My Top 10 Songs </h1>
+        <div class="container files-form margin-thirty">
+            <div id="files-container" class="margin-ten"></div>
+            </div>
 
         
             <script>
@@ -33,6 +63,27 @@
             audioPlayer.style.display = 'block';
         }
     });
+
+   
+    $(document).ready(function () {
+        $.ajax({
+            url: `http://localhost:8888/api/files`,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                $('#files-container').html('');
+                $.each(data, function (key, value) {
+                    $('#files-container').append(`
+                        <div class="files-container margin-thirty">
+                            <p>Name: ${value['fileName']}</p>
+                           
+                            
+                        </div>`);
+                });
+            }
+        });
+    });
+
         </script>
 
 
