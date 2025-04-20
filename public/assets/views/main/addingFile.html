@@ -23,6 +23,23 @@
         <input class="form-control" type="file" id="audioUpload" accept="audio/mp3, audio/wav" />
         <audio id="audioPlayer" controls style="margin-top: 15px; display: none;"></audio>
 
+        
+            <script>
+    $('#audioUpload').on('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.src = URL.createObjectURL(file);
+            audioPlayer.style.display = 'block';
+        }
+    });
+        </script>
+
+
+
+
+        </script>
+
     </div>
 </div>
 </html>

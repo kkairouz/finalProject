@@ -20,13 +20,31 @@ CREATE TABLE `audio`
 );
 
 insert into audio (fileName)
-values ('Better Together');
+values ('Whatever You Like');
 
 insert into audio (fileName)
-values ('Goodbyes');
+values ('Will Be Alright');
 
 insert into audio (fileName)
-values ('Not Like Us');
+values ('Back to Life');
 
 insert into audio (fileName)
-values ('Birds of a Feather');
+values ('Find My Own');
+
+insert into audio (fileName)
+values ('Fadeaway');
+
+insert into audio (fileName)
+values ('Losing My Love');
+
+insert into audio (fileName)
+values ('You Belong With Me');
+
+insert into audio (fileName)
+values ('Crossing Your Heart');
+
+insert into audio (fileName)
+values ('Hear Me Now');
+
+insert into audio (fileName)
+values ('Its Not The Same');
